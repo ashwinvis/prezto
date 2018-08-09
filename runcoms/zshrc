@@ -11,6 +11,35 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-if [ -f ${HOME}/.zsh_profile ]; then
-  source "${HOME}/.zsh_profile"
+
+HISTFILE=${ZDOTDIR:-$HOME}/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory autocd extendedglob nomatch
+unsetopt beep
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename "${ZDOTDIR:-$HOME}/.zshrc"
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+## oh-my-zsh configuration
+# ZSH_THEME="minimal"
+# DEFAULT_USER="avmo@kthxps"
+# export UPDATE_ZSH_DAYS=30
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+# plugins=(git archlinux mercurial python autojump web-search pip docker)
+# source $ZSH/oh-my-zsh.sh
+
+
+# Alias
+alias tr='noglob tr'
+
+# System-specific customizations
+
+if [ -f ${ZDOTDIR:-$HOME}/.zsh_profile ]; then
+  source "${ZDOTDIR:-$HOME}/.zsh_profile"
 fi
