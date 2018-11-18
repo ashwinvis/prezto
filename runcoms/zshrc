@@ -3,6 +3,7 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Ashwin Vishnu <ashwinvis plus gh @t protonmail D0T com>
 #
 
 # Source Prezto.
@@ -20,20 +21,14 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename "${ZDOTDIR:-$HOME}/.zshrc"
+
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'l:|=* r:|=*'
+zstyle :compinstall filename '${ZDOTDIR:-$HOME}/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-
-## oh-my-zsh configuration
-# ZSH_THEME="minimal"
-# DEFAULT_USER="avmo@kthxps"
-# export UPDATE_ZSH_DAYS=30
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-# plugins=(git archlinux mercurial python autojump web-search pip docker)
-# source $ZSH/oh-my-zsh.sh
-
 
 # Alias
 alias tr='noglob tr'
