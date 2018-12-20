@@ -19,6 +19,10 @@ SAVEHIST=1000
 setopt appendhistory autocd extendedglob nomatch
 unsetopt beep
 # End of lines configured by zsh-newuser-install
+
+# Custom zsh completions
+fpath=($HOME/.local/etc/zsh_completion.d $fpath)
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
@@ -29,8 +33,12 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# zsh-autosuggestions bind
+bindkey '^ ' autosuggest-accept
+
 # Alias
 alias tr='noglob tr'
+alias checkupdates='checkupdates | column -t'
 
 # System-specific customizations
 
