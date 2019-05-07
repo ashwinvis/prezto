@@ -39,8 +39,14 @@ bindkey '^ ' autosuggest-accept
 # Alias
 alias tr='noglob tr'
 
+
 # System-specific customizations
+local _ZSHRC_BASE="${ZDOTDIR:-$HOME}/.zshrc-base"
 local _ZSHRC_LOCAL="${ZDOTDIR:-$HOME}/.zshrc-$HOST"
+
+if [ -f $_ZSHRC_BASE ]; then
+  source $_ZSHRC_BASE
+fi
 
 if [ -f $_ZSHRC_LOCAL ]; then
   source $_ZSHRC_LOCAL
