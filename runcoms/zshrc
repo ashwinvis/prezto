@@ -1,4 +1,4 @@
-#
+#!zsh
 # Executes commands at the start of an interactive session.
 #
 # Authors:
@@ -15,19 +15,9 @@ fi
 
 # Customize to your needs...
 
-HISTFILE=${ZDOTDIR:-$HOME}/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt appendhistory autocd extendedglob nomatch
-unsetopt beep
-# End of lines configured by zsh-newuser-install
-
-# Custom zsh completions
-fpath=($HOME/.local/etc/zsh_completion.d $fpath)
-
 # System-specific customizations
-local _ZSHRC_BASE="${ZDOTDIR:-$HOME}/.zshrc-base"
-local _ZSHRC_LOCAL="${ZDOTDIR:-$HOME}/.zshrc-$HOST"
+_ZSHRC_BASE="${ZDOTDIR:-$HOME}/.zshrc-base"
+_ZSHRC_LOCAL="${ZDOTDIR:-$HOME}/.zshrc-$HOST"
 
 if [ -f $_ZSHRC_BASE ]; then
   source $_ZSHRC_BASE
@@ -36,35 +26,4 @@ fi
 if [ -f $_ZSHRC_LOCAL ]; then
   source $_ZSHRC_LOCAL
 fi
-
-# The following lines were added by compinstall
-
-zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'l:|=* r:|=*'
-zstyle :compinstall filename '${ZDOTDIR:-$HOME}/.zshrc'
-
-autoload -Uz compinit
-# See: https://gist.github.com/ctechols/ca1035271ad134841284
-# On slow systems, checking the cached .zcompdump file to see if it must be 
-# regenerated adds a noticable delay to zsh startup.  This little hack restricts 
-# it to once a day.  It should be pasted into your own completion file.
-#
-# The globbing is a little complicated here:
-# - '#q' is an explicit glob qualifier that makes globbing work within zsh's [[ ]] construct.
-# - 'N' makes the glob pattern evaluate to nothing when it doesn't match (rather than throw a globbing error)
-# - '.' matches "regular files"
-# - 'mh+24' matches files (or directories or whatever) that are older than 24 hours.
-if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+1) ]]; then
-  compinit
-else
-  compinit -C
-fi;
-# End of lines added by compinstall
-
-
-# zsh-autosuggestions bind
-bindkey '^ ' autosuggest-accept
-
-# Alias
-alias tr='noglob tr'
 
