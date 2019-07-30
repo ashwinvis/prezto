@@ -99,8 +99,8 @@ function prompt_steeef_setup {
   zstyle ':prezto:module:python:info:virtualenv' format '(%v)'
 
   # _prompt_steve_userhost="${_prompt_steeef_colors[3]}%n%f${_prompt_steeef_colors[2]}/%m/%f"
-  _prompt_steve_userhost="%f"
-  _prompt_steve_pwd=''
+  # _prompt_steve_userhost="%f"
+  # _prompt_steve_pwd='%n%f'
   # _prompt_steve_pwd='""%(B%F{1}#%f%b.')"
   # Define prompts.
   PROMPT='${_prompt_steve_userhost}${_prompt_steeef_colors[5]}${_prompt_steve_pwd}%f ${vcs_info_msg_0_}${editor_info[keymap]} '
