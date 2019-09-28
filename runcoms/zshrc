@@ -27,3 +27,7 @@ if [ -f $_ZSHRC_LOCAL ]; then
   source $_ZSHRC_LOCAL
 fi
 
+# thefuck
+if [[ -n $(cmd_exists thefuck) ]]; then
+  eval $(thefuck --alias)
+fi
