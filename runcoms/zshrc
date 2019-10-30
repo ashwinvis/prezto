@@ -28,6 +28,6 @@ if [ -f $_ZSHRC_LOCAL ]; then
 fi
 
 # thefuck
-if [[ -n $(cmd_exists thefuck) ]]; then
+if [[ -x $(cmd_exists thefuck) ]]; then
   eval $(thefuck --alias)
 fi
