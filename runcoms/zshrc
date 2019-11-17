@@ -27,6 +27,10 @@ if [ -f $_ZSHRC_LOCAL ]; then
   source $_ZSHRC_LOCAL
 fi
 
+function cmd_exists() {
+  whence -cp "$1" 2> /dev/null
+}
+
 # thefuck
 if [[ -x $(cmd_exists thefuck) ]]; then
   eval $(thefuck --alias)
