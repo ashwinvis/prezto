@@ -16,8 +16,8 @@ fi
 # Customize to your needs...
 
 # System-specific customizations
-_ZSHRC_BASE="${HOME}/.config/zsh/runcoms/.zshrc-base"
-_ZSHRC_LOCAL="${HOME}/.config/zsh/runcoms/.zshrc-$HOST"
+_ZSHRC_BASE="${HOME}/.config/zsh/runcoms/base"
+_ZSHRC_LOCAL="${HOME}/.config/zsh/runcoms/$HOST"
 
 if [ -f $_ZSHRC_BASE ]; then
   source $_ZSHRC_BASE
