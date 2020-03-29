@@ -35,3 +35,6 @@ function cmd_exists() {
 if [[ -x $(cmd_exists thefuck) ]]; then
   eval $(thefuck --alias)
 fi
+
+# line added by conda-app
+export PATH=/home/avmo/.local/bin/conda-app:$PATH
