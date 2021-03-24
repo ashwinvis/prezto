@@ -37,4 +37,4 @@ if [[ -x $(cmd_exists thefuck) ]]; then
 fi
 
 # line added by conda-app
-export PATH=/home/avmo/.local/bin/conda-app:$PATH
+export PATH=/home/avmo/.micromamba/condabin/app:$PATH
