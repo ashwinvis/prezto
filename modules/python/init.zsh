@@ -13,6 +13,7 @@ pmodload 'helper'
 # Load manually installed pyenv into the path
 if [[ -s "${PYENV_ROOT:=$HOME/.pyenv}/bin/pyenv" ]]; then
   path=("${PYENV_ROOT}/bin" $path)
+  eval "$(pyenv init --path)"
   eval "$(pyenv init - --no-rehash zsh)"
 
 # Load pyenv into the current python session
