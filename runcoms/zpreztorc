@@ -39,8 +39,8 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt' \
   'history-substring-search' \
+  'prompt' \
   'pacman' \
   'autosuggestions' \
   'python' \
@@ -58,7 +58,6 @@ zstyle ':prezto:load' pmodule \
 
 # Set the query found color.
 # zstyle ':prezto:module:autosuggestions:color' found ''
-
 
 #
 # Completions
@@ -101,8 +100,8 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 # Set the query found color.
 # zstyle ':prezto:module:history-substring-search:color' found ''
-#
-# # Set the query not found color.
+
+# Set the query not found color.
 # zstyle ':prezto:module:history-substring-search:color' not-found ''
 
 # Set the search globbing flags.
