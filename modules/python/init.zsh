@@ -11,13 +11,6 @@
 # Load dependencies.
 pmodload 'helper'
 
-# Load manually installed pyenv into the path
-# if [[ -s "${PYENV_ROOT:=$HOME/.pyenv}/bin/pyenv" ]]; then
-#   path=("${PYENV_ROOT}/bin" $path)
-#   eval "$(pyenv init --path)"
-#   eval "$(pyenv init - --no-rehash zsh)"
-# fi
-
 # Load manually installed or package manager installed pyenv into the shell
 # session.
 if [[ -s "${local_pyenv::=${PYENV_ROOT:-$HOME/.pyenv}/bin/pyenv}" ]] \
