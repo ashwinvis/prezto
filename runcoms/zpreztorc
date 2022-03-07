@@ -50,7 +50,8 @@ zstyle ':prezto:load' pmodule \
   'rsync' \
   'ssh' \
   'fzf' \
-  # 'gpg' \
+  'nix-zsh-completions' \
+  'nix-shell' \
 
 #
 # Autosuggestions

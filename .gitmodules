@@ -29,3 +29,9 @@
 	path = modules/prompt/external/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 	shallow = true
+[submodule "modules/nix-zsh-completions"]
+	path = modules/nix-zsh-completions/external
+	url = https://github.com/spwhitt/nix-zsh-completions.git
+[submodule "modules/nix-shell"]
+	path = modules/nix-shell/external
+	url = https://github.com/chisui/zsh-nix-shell.git
